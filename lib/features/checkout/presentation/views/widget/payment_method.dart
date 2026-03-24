@@ -27,7 +27,8 @@ class _PaymentMethodState extends State<PaymentMethod> {
               currentIndex = index;
             });
           },
-          child: Container(
+          child: AnimatedContainer(
+            duration: Duration(milliseconds: 350),
             height: 62,
             width: 104,
             decoration: ShapeDecoration(

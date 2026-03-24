@@ -6,11 +6,14 @@ class AppButton extends StatelessWidget {
     super.key,
     this.topSpacing = 0,
     this.bottomSpacing = 0,
-    required this.title, required this.onTap,
+    this.rightSpacing = 0,
+    this.leftSpacing = 0,
+    required this.title,
+    required this.onTap,
   });
-  final double topSpacing, bottomSpacing;
+  final double topSpacing, bottomSpacing, rightSpacing, leftSpacing;
   final String title;
-  final VoidCallback onTap ;
+  final VoidCallback onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +21,12 @@ class AppButton extends StatelessWidget {
       onTap: onTap,
       child: Container(
         alignment: Alignment.center,
-        margin: EdgeInsets.only(top: topSpacing, bottom: bottomSpacing),
+        margin: EdgeInsets.only(
+          top: topSpacing,
+          bottom: bottomSpacing,
+          right: rightSpacing,
+          left: leftSpacing,
+        ),
         height: 73,
         width: double.infinity,
         decoration: BoxDecoration(
