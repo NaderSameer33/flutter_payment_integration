@@ -4,9 +4,16 @@ import 'package:payment_integration/core/ui/custom_app_bar.dart';
 import 'package:payment_integration/features/checkout/presentation/views/widget/custom_creadit_card.dart';
 import 'package:payment_integration/features/checkout/presentation/views/widget/payment_method.dart';
 
-class PaymentDetailsView extends StatelessWidget {
+class PaymentDetailsView extends StatefulWidget {
   const PaymentDetailsView({super.key});
 
+  @override
+  State<PaymentDetailsView> createState() => _PaymentDetailsViewState();
+}
+
+class _PaymentDetailsViewState extends State<PaymentDetailsView> {
+  final formKey = GlobalKey<FormState>();
+  AutovalidateMode _autoValidatieMode = AutovalidateMode.disabled;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,7 +29,10 @@ class PaymentDetailsView extends StatelessWidget {
             child: PaymentMethod(),
           ),
           SliverToBoxAdapter(
-            child: CustomCreaitCard(),
+            child: CustomCreaitCard(
+              autovalidateMode: _autoValidatieMode,
+              formKey: formKey,
+            ),
           ),
           SliverFillRemaining(
             hasScrollBody: false,
@@ -34,7 +44,14 @@ class PaymentDetailsView extends StatelessWidget {
 
                 bottomSpacing: 10,
                 title: 'pay',
-                onTap: () {},
+                onTap: () {
+                  if (formKey.currentState!.validate()) {
+                    formKey.currentState!.save();
+                  } else {
+                    _autoValidatieMode = AutovalidateMode.always;
+                    setState(() {});
+                  }
+                },
               ),
             ),
           ),
