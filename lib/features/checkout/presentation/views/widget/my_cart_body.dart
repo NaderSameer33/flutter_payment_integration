@@ -1,8 +1,6 @@
-
 import 'package:flutter/material.dart';
-import 'package:payment_integration/core/logic/helper_mehod.dart';
 import 'package:payment_integration/core/ui/app_button.dart';
-import 'package:payment_integration/features/checkout/presentation/views/payment_details_view.dart';
+import 'package:payment_integration/features/checkout/presentation/views/widget/cusotm_bottom_sheet.dart';
 import 'package:payment_integration/features/checkout/presentation/views/widget/order_info.dart';
 
 class MyCartViewBody extends StatelessWidget {
@@ -47,7 +45,12 @@ class MyCartViewBody extends StatelessWidget {
             title: 'Complete Payment',
             topSpacing: 16,
             bottomSpacing: 25,
-            onTap: () => goTo(context, page: PaymentDetailsView()),
+            onTap: () {
+              showModalBottomSheet(
+                context: context,
+                builder: (context) => CustomBottomSheet(),
+              );
+            },
           ),
         ],
       ),

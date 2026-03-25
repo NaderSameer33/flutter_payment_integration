@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:payment_integration/core/logic/helper_mehod.dart';
 import 'package:payment_integration/core/ui/app_button.dart';
 import 'package:payment_integration/core/ui/custom_app_bar.dart';
+import 'package:payment_integration/features/checkout/presentation/views/thank_you_view.dart';
 import 'package:payment_integration/features/checkout/presentation/views/widget/custom_creadit_card.dart';
 import 'package:payment_integration/features/checkout/presentation/views/widget/payment_method.dart';
 
@@ -48,6 +50,7 @@ class _PaymentDetailsViewState extends State<PaymentDetailsView> {
                   if (formKey.currentState!.validate()) {
                     formKey.currentState!.save();
                   } else {
+                    goTo(context, page: ThankYouView());
                     _autoValidatieMode = AutovalidateMode.always;
                     setState(() {});
                   }
