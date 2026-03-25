@@ -36,6 +36,7 @@ dependencies:
   cupertino_icons: ^1.0.8
   flutter_svg: ^2.2.3
   flutter_credit_card: ^4.1.0
+  flutter_stripe: ^12.4.0
 
 dev_dependencies:
   flutter_test:
