@@ -30,7 +30,7 @@ abstract class AppStyle {
     color: Colors.black,
     height: 0,
   );
-  static TextStyle style20= TextStyle(
+  static TextStyle style20 = TextStyle(
     fontWeight: FontWeight.w400,
     fontSize: 20,
     color: Colors.black,

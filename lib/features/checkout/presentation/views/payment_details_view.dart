@@ -3,7 +3,6 @@ import 'package:payment_integration/core/logic/helper_mehod.dart';
 import 'package:payment_integration/core/ui/app_button.dart';
 import 'package:payment_integration/core/ui/custom_app_bar.dart';
 import 'package:payment_integration/features/checkout/presentation/views/thank_you_view.dart';
-import 'package:payment_integration/features/checkout/presentation/views/widget/cusotm_bottom_sheet.dart';
 import 'package:payment_integration/features/checkout/presentation/views/widget/custom_creadit_card.dart';
 import 'package:payment_integration/features/checkout/presentation/views/widget/payment_method.dart';
 
@@ -18,10 +17,6 @@ class _PaymentDetailsViewState extends State<PaymentDetailsView> {
   final formKey = GlobalKey<FormState>();
   AutovalidateMode _autoValidatieMode = AutovalidateMode.disabled;
   @override
-  void initState() {
-    super.initState();
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
